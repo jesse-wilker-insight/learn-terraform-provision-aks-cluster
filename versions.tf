@@ -1,11 +1,9 @@
 terraform {
-  required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "2.42.0"
+  backend "remote" {
+    organization = "connect-health"
+
+    workspaces {
+      name = "learn-terraform-provision-aks-cluster"
     }
   }
-
-  required_version = "~> 0.14"
 }
-
